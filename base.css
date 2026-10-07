@@ -1,0 +1,99 @@
+/* Neutral mechanics only. Studio identity belongs in brand.css and hero.css. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  touch-action: manipulation;
+}
+
+button {
+  cursor: pointer;
+}
+
+:where(a, button, input, textarea, select, summary):focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.dk-skip-link {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  transform: translateY(-120%);
+}
+
+.dk-skip-link:focus {
+  transform: translateY(0);
+}
+
+/* The no-JS experience keeps the complete navigation visible. */
+.dk-menu[hidden] {
+  display: none;
+}
+
+.dk-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 767px) {
+  html.js .dk-menu:not([hidden]) {
+    display: inline-flex;
+  }
+
+  html.js .dk-nav[hidden] {
+    display: none;
+  }
+
+  html.js .dk-header.is-menu-open .dk-nav {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  html.js .dk-menu {
+    display: none;
+  }
+
+  html.js .dk-nav {
+    display: block;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

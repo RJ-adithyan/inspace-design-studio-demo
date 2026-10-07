@@ -1,0 +1,26 @@
+.soft-hero{position:relative;overflow:hidden;text-align:center;isolation:isolate;padding-top:65px}
+.hero-copy{position:relative;z-index:2;padding:0 20px}
+.hero-copy .eyebrow{margin-bottom:23px}
+.hero-copy h1{font-size:clamp(54px,5.8vw,86px);line-height:1.03;font-weight:400;letter-spacing:-.045em;margin:0 0 22px}
+.hero-copy h1 em{color:var(--sage)}
+.ring-stage{height:340px;position:relative;perspective:1350px;perspective-origin:50% 46%;margin-top:36px;pointer-events:none}
+.ring-axis,.ring-spin{position:absolute;top:50%;left:50%;width:0;height:0;transform-style:preserve-3d}
+.ring-axis{--radius:330px;--card-width:190px;--card-height:240px;transform:rotateX(-13deg)}
+.ring-spin{top:0;left:0;transform:rotateY(0deg)}
+.ring-card{margin:0;position:absolute;left:calc(var(--card-width) / -2);top:calc(var(--card-height) / -2);width:var(--card-width);height:var(--card-height);transform:rotateY(var(--angle)) translateZ(var(--radius));border-radius:20px;overflow:hidden;box-shadow:0 18px 35px var(--shadow);background:var(--paper-deep);border:1px solid var(--line)}
+.ring-card img{width:100%;height:100%;object-fit:cover}
+.hero-bottom{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:0 5vw 25px;font-size:12px}
+.hero-bottom button{border:1px solid var(--line);border-radius:30px;background:transparent;padding:10px 17px;color:var(--ink)}
+.work-strip{overflow:hidden;border-block:1px solid var(--line);padding:19px 0;color:var(--sage);font:italic 400 28px/1.3 var(--font-display)}
+.strip-track{display:flex;width:max-content;transform:translateX(0)}
+.strip-track span{flex:none;white-space:nowrap;padding-right:16px}
+@media(max-width:767px){
+ .soft-hero{padding-top:42px}
+ .hero-copy .eyebrow{font-size:9px;letter-spacing:.12em;max-width:280px;margin:0 auto 20px;line-height:1.7}
+ .hero-copy h1{font-size:51px;line-height:1.03}
+ .ring-stage{height:285px;margin-top:24px;perspective:900px}
+ .ring-axis{--radius:177px;--card-width:130px;--card-height:176px;transform:rotateX(-17deg)}
+ .ring-card{border-radius:14px}
+ .hero-bottom{padding:0 22px 24px;font-size:11px}
+ .work-strip{font-size:23px;padding:16px 0}
+}
